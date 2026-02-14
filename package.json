@@ -1,0 +1,16 @@
+{
+  "name": "line-reminder-bot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "migrate:local": "wrangler d1 execute line-reminder-db --local --file=migrations/0001_create_reminders.sql",
+    "migrate:remote": "wrangler d1 execute line-reminder-db --remote --file=migrations/0001_create_reminders.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.0.0"
+  }
+}

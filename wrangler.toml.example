@@ -1,0 +1,21 @@
+name = "line-reminder-bot"
+main = "src/index.ts"
+compatibility_date = "2025-02-14"
+
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "line-reminder-db"
+database_id = "<YOUR_D1_DATABASE_ID>"
+
+[vars]
+DEFAULT_TIMEZONE = "Asia/Taipei"
+MAX_RETRY = "3"
+DISPATCH_BATCH_SIZE = "100"
+
+# Secrets (set via `wrangler secret put <NAME>`):
+#   LINE_CHANNEL_SECRET
+#   LINE_CHANNEL_ACCESS_TOKEN
+#   ALLOWED_GROUPS          - comma-separated group/room IDs, e.g. "Cxxx,Cyyy"
